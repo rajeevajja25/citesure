@@ -12,11 +12,8 @@ import urllib.request
 import urllib.parse
 import ssl
 
-try:
-    import PyPDF2
-    PDF_SUPPORT = True
-except:
-    PDF_SUPPORT = False
+
+PDF_SUPPORT = False
 
 app = FastAPI(title="CiteGuard", version="3.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
@@ -967,4 +964,5 @@ if __name__ == "__main__":
     print("🚀 CiteGuard v3.0 with Web Interface")
     print("📚 APIs: PubMed, Semantic Scholar, Wikipedia")
     print("🌐 Open: http://127.0.0.1:9000")
+
     uvicorn.run(app, host="127.0.0.1", port=9000)
